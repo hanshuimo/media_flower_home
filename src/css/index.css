@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /*touch-action: none;*/
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.message {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    /*opacity: 0.5;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+#submit {
+    width: 50px;
+    height: 30px;
+}
+
+#canvas {
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+    background-color: yellow;
+}
+
+.message img {
+    height: 50%;
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.message div {
+    width: 80%;
+    text-align: center;
+}
+
+#operate {
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    right: 0;
+    color: white;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.startMoveOperate {
+    animation-name: moveOperate;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-play-state: running;
+}
+
+.endMoveOperate {
+    animation-name: moveOperateBack;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-play-state: running;
+}
+
+@keyframes moveOperate {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: -50vw;
+    }
+}
+
+@keyframes moveOperateBack {
+    0% {
+        right: -50vw;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+#operateContent {
+    width: 50vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#operateContent #canvas{
+    /*width: 100%;*/
+    /*height: 100px;*/
+    overflow-y: scroll;
+}
+
+#operateTip {
+    width: 50vw;
+    height: 20vw;
+    text-align: center;
+}
